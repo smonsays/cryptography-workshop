@@ -298,6 +298,14 @@ body {
 .reveal small * {
   vertical-align: top; }
 
+
+.reveal textarea {
+  color: #000;
+  font-family: Roboto Slab;
+  font-size: 0.7em;
+  margin: 30px auto;
+}
+
 /*********************************************
  * LINKS
  *********************************************/

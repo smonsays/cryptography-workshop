@@ -163,6 +163,8 @@ Julius Caesar used a form of **substitution cipher** <br> to send messages to hi
 </tbody>
 </table>
 
+<textarea rows="3" cols="40">Khoor iurp wkh sdvw</textarea>
+
 ## Cipher Wheel
 Make your own Caesar cipher 🖌️
 
@@ -331,8 +333,5 @@ Bob wants to send an encrypted message to Alice without Eve being able to decryp
 The [Diffie–Hellman key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) algorithm allows to securely exchange keys over a public channel. 
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Diffie-Hellman_Key_Exchange.svg" alt="Diffie-Hellman" width="30%"/>
-
-## Forward Secrecy & Plausible Deniability
-- [Signal Protocol](https://en.wikipedia.org/wiki/Signal_Protocol)
 
 ## [Contact Tracing](https://ncase.me/contact-tracing/)
