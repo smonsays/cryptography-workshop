@@ -4,8 +4,7 @@
 
 FILENAME="cryptography_20200511"
 
-pandoc -t revealjs -s -o ${FILENAME}.html ${FILENAME}.md --slide-level 2 -V revealjs-url=./reveal.js -V theme=robolung -V slideNumber=true -V hash=true -V history=true -V margin=0.1 -V preloadIframes=true -V controlsTutorial=false --mathjax
-#-V controls=false
+pandoc -t revealjs -s -o ${FILENAME}.html ${FILENAME}.md --slide-level 2 -V revealjs-url=./reveal.js -V theme=robolung -V slideNumber=true -V hash=true -V history=true -V margin=0.1 -V preloadIframes=true -V controlsTutorial=false --mathjax -V controls=false
 
 # Insert custom html that creates the borders in the used theme
 sed -ie '/^<body>/a <div class="line top"></div>\n<div class="line bottom"></div>\n<div class="line left"></div>\n<div class="line right"></div>' ${FILENAME}.html
