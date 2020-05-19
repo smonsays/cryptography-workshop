@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Simon Schug">
+  <title>Cryptography</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./reveal.js/css/reset.css">
+  <link rel="stylesheet" href="./reveal.js/css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="./reveal.js/css/theme/robolung.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? './reveal.js/css/print/pdf.css' : './reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="./reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="line top"></div>
+<div class="line bottom"></div>
+<div class="line left"></div>
+<div class="line right"></div>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title"><a href="">Cryptography</a></h1>
+  <p class="author">Simon Schug</p>
+  <p class="date">May 2020</p>
+</section>
+
+<section>
+<section id="introduction" class="title-slide slide level1" data-background="#7BAB8B">
+<h1 data-background="#7BAB8B">Introduction</h1>
+
+</section>
+<section id="what-is-cryptography" class="slide level2">
+<h2>What is Cryptography?</h2>
+<p>Cryptography is the art &amp; science of keeping messages secure 🔒️</p>
+<pre><code>Crypto + Graphy = Secret + Writing</code></pre>
+<ul>
+<li class="fragment"><strong>Plaintext</strong>: The secret message.</li>
+<li class="fragment"><strong>Ciphertext</strong>: The encrypted message.</li>
+<li class="fragment"><strong>Encryption</strong>: Disguising a message to hide its contents.</li>
+<li class="fragment"><strong>Decryption</strong>: The process of turning ciphertext back into plaintext.</li>
+</ul>
+<aside class="notes">
+<p>The main objective of cryptography is to conceal data and messages from eavesdroppers.</p>
+<ul>
+<li>What can be encrypted?</li>
+<li>Do <em>messages</em> only refer to text?</li>
+<li>Can images be encrypted</li>
+</ul>
+</aside>
+</section>
+<section id="who-needs-encryption" class="slide level2">
+<h2>Who needs Encryption?</h2>
+<p style="font-size:4em">
+👩‍⚕️️🕵‍👩‍💻️👮️🏦️
+</p>
+<div class="fragment">
+<pre><code>Everyone.</code></pre>
+<aside class="notes">
+<ul>
+<li>Who do you think needs encryption?</li>
+</ul>
+</aside>
+</div>
+</section>
+<section id="what-can-it-be-used-for" class="slide level2">
+<h2>What can it be used for?</h2>
+<p>Cryptography is not only used for sending secret messages.</p>
+<ul>
+<li class="fragment">Privacy / Confidentiality ✉️</li>
+<li class="fragment">Authentication 🗝️</li>
+<li class="fragment">Anonymity 🕵‍</li>
+<li class="fragment">Signature / Certification 🔏️</li>
+</ul>
+</section>
+<section id="mass-surveillance" class="slide level2">
+<h2>Mass Surveillance</h2>
+<p>“<em>If you have nothing to hide, you have nothing to fear.</em>”</p>
+<iframe width="700" height="400" src="https://www.youtube-nocookie.com/embed/V9_PjdU3Mpo?start=152" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<aside class="notes">
+<ul>
+<li>What does NSA stand for?</li>
+<li>Why did the FBI ask Apple to decrypt a phone?</li>
+<li>What is a backdoor?</li>
+<li>Why didn’t Apple follow suit with this request?</li>
+</ul>
+</aside>
+</section>
+<section id="section" class="slide level2">
+<h2><img src="./assets/crypto-wars.svg" alt="crypto-wars" width="70%"/></h2>
+<p>Governments are trying to <a href="https://www.eff.org/document/crypto-wars-governments-working-undermine-encryption">limit access</a> to cryptography.</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:40%;">
+<h4 id="cypherpunks"><a href="https://activism.net/cypherpunk/manifesto.html">Cypherpunks</a></h4>
+<pre><code>We the Cypherpunks are defending our privacy with cryptography.</code></pre>
+</div><div class="column" style="width:20%;">
+<p><img src="./assets/lightsaber.svg" alt="lightsaber" width="80%"/></p>
+</div><div class="column" style="width:40%;">
+<h4 id="NSA" style="color:#8b7bab">
+NSA
+</h4>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Clipper_chip">Clipper chip</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Edward_Snowden">Edward Snowden</a> revealed that the NSA sabotages encryption</li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>Why do you think that governments would like to limit access to cryptography?</li>
+<li>In the 1990s the NSA promoted the <a href="https://en.wikipedia.org/wiki/Clipper_chip">clipper chip</a> to give the government backdoor keys</li>
+<li>Although courts, Congress, and the public opinion all opposed this, NSA undermines this in secret</li>
+<li>The NSA was revealed to insert hidden vulnerabilities into our security standards and systems</li>
+</ul>
+</aside>
+</div>
+</section>
+<section id="quiz-time" class="slide level2">
+<h2><a href="https://create.kahoot.it/share/cryptography-i/3d21faeb-db61-48e4-8446-a0e20ce1813f">Quiz-Time!</a></h2>
+</section></section>
+<section>
+<section id="classical-ciphers" class="title-slide slide level1" data-background="#7BAB8B">
+<h1 data-background="#7BAB8B">Classical Ciphers</h1>
+
+</section>
+<section id="caesar-cipher" class="slide level2">
+<h2>Caesar Cipher <img src="./assets/caesar.svg" alt="caesar" width="7%"/></h2>
+<p>Julius Caesar used a form of <strong>substitution cipher</strong> <br> to send messages to his troops.</p>
+<!-- | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| D | E |   |   |   | I |   | K |   |   |   | O |   |   | R | S | T |   |   | W |   | Y |   |   |   | C | -->
+<table>
+<thead>
+<tr>
+<th>
+A
+</th>
+<th>
+B
+</th>
+<th>
+C
+</th>
+<th>
+D
+</th>
+<th>
+E
+</th>
+<th>
+F
+</th>
+<th>
+G
+</th>
+<th>
+H
+</th>
+<th>
+I
+</th>
+<th>
+J
+</th>
+<th>
+K
+</th>
+<th>
+L
+</th>
+<th>
+M
+</th>
+<th>
+N
+</th>
+<th>
+O
+</th>
+<th>
+P
+</th>
+<th>
+Q
+</th>
+<th>
+R
+</th>
+<th>
+S
+</th>
+<th>
+T
+</th>
+<th>
+U
+</th>
+<th>
+V
+</th>
+<th>
+W
+</th>
+<th>
+X
+</th>
+<th>
+Y
+</th>
+<th>
+Z
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td contenteditable="true">
+D
+</td>
+<td contenteditable="true">
+E
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+I
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+K
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+O
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+R
+</td>
+<td contenteditable="true">
+S
+</td>
+<td contenteditable="true">
+T
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+W
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+Y
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+C
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cipher-wheel" class="slide level2">
+<h2>Cipher Wheel</h2>
+<p>Make your own Caesar cipher 🖌️</p>
+<iframe height="500" width="850" data-src="http://inventwithpython.com/cipherwheel/">
+</iframe>
+<aside class="notes">
+<ul>
+<li>Encrypt your favourite …</li>
+<li>Send me a encrypted message but don’t tell me they key</li>
+<li>Automatically <a href="https://www.xarg.org/tools/caesar-cipher/">decrypt</a></li>
+</ul>
+</aside>
+</section>
+<section id="permutation-cipher" class="slide level2">
+<h2>Permutation Cipher</h2>
+<p><img src="./assets/permutation.svg" alt="permutation" width="30%"/></p>
+<p>Can you decipher the message in <a href="https://go.joincyberstart.com">this challenge</a>?</p>
+<aside class="notes">
+Column Confusion
+</aside>
+</section>
+<section id="vigenère-cipher" class="slide level2">
+<h2>Vigenère Cipher</h2>
+<p><img src="./assets/alphabet-circle.svg" alt="alphabet-circle" width="30%"/> <!-- https://ljd42.files.wordpress.com/2015/10/d85e4-alphabetclock.jpg --></p>
+<table>
+<thead>
+<tr>
+<th>
+T<sub>19</sub>
+</th>
+<th>
+H<sub>7</sub>
+</th>
+<th>
+E<sub>4</sub>
+</th>
+<th>
+S<sub>18</sub>
+</th>
+<th>
+E<sub>4</sub>
+</th>
+<th>
+C<sub>2</sub>
+</th>
+<th>
+R<sub>17</sub>
+</th>
+<th>
+E<sub>4</sub>
+</th>
+<th>
+T<sub>19</sub>
+</th>
+<th>
+M<sub>12</sub>
+</th>
+<th>
+E<sub>4</sub>
+</th>
+<th>
+S<sub>18</sub>
+</th>
+<th>
+S<sub>18</sub>
+</th>
+<th>
+A<sub>0</sub>
+</th>
+<th>
+G<sub>6</sub>
+</th>
+<th>
+E<sub>4</sub>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+P<sub>15</sub>
+</td>
+<td>
+A<sub>0</sub>
+</td>
+<td>
+S<sub>18</sub>
+</td>
+<td>
+S<sub>18</sub>
+</td>
+<td>
+W<sub>22</sub>
+</td>
+<td>
+O<sub>14</sub>
+</td>
+<td>
+R<sub>17</sub>
+</td>
+<td>
+D<sub>3</sub>
+</td>
+<td>
+P<sub>15</sub>
+</td>
+<td>
+A<sub>0</sub>
+</td>
+<td>
+S<sub>18</sub>
+</td>
+<td>
+S<sub>18</sub>
+</td>
+<td>
+W<sub>22</sub>
+</td>
+<td>
+O<sub>14</sub>
+</td>
+<td>
+R<sub>17</sub>
+</td>
+<td>
+D<sub>3</sub>
+</td>
+</tr>
+<tr>
+<td contenteditable="true">
+I
+</td>
+<td contenteditable="true">
+H
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+<td contenteditable="true">
+</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<ul>
+<li>Encrypt your favourite …</li>
+<li>What key would we need to recover the Caesar cipher?</li>
+</ul>
+</aside>
+</section></section>
+<section>
+<section id="cryptanalysis" class="title-slide slide level1" data-background="#7BAB8B">
+<h1 data-background="#7BAB8B">Cryptanalysis</h1>
+
+</section>
+<section id="code" class="slide level2">
+<h2>Code</h2>
+<blockquote>
+<p>A <strong>code</strong> is a system of rules to convert information (letters, sounds, images) into another form of representation.</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p>01011100010101001 10100011011010110 01101100101010001 00001101001011101</p>
+</div><div class="column" style="width:33%;">
+<p><img src="./assets/qr-code.svg" alt="qr-code" width="50%"/></p>
+</div><div class="column" style="width:33%;">
+<p><img src="./assets/barcode.svg" alt="barcode" width="75%"/></p>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>What is a code?</li>
+<li>What examples of codes do you know?</li>
+<li>Is a code a form of encryption?</li>
+</ul>
+</aside>
+</section>
+<section id="fingerprint-challenge" class="slide level2">
+<h2>Fingerprint Challenge</h2>
+<p><img src="./assets/fingerprint.svg" alt="fingerprint" width="10%"/></p>
+<p>Can you hack the password in <a href="https://go.joincyberstart.com">this challenge</a>?</p>
+<ul>
+<li class="fragment">How many combinations are there?</li>
+<li class="fragment">Come up with a strong password that you can easily remember</li>
+<li class="fragment">How strong is it? <a href="https://howsecureismypassword.net/">Check it</a></li>
+</ul>
+<aside class="notes">
+<p><strong>Brute-Force Attack</strong>: Attempting as many guesses in as little time as possible.</p>
+One of the fastest supercomputers could theoretically check 100 million million (10^14) AES keys per second (assuming 1000 operations per check), but would still require 3.67×10^52 years to exhaust the 256-bit key space.
+</aside>
+</section>
+<section id="breaking-the-caesar-cipher" class="slide level2">
+<h2>Breaking the Caesar Cipher</h2>
+<p>We have intercepted an encrypted message. Can you decrypt it?</p>
+<pre><code>Ogo qgm sjw s hjwllq kesjl zsucwj</code></pre>
+<div class="fragment">
+<p><img src="./assets/letter-frequency.svg" alt="letter-frequency" width="75%"/></p>
+<aside class="notes">
+<ul>
+<li>Can you think of smarter ways to breach cryptographic security systems?</li>
+<li>Frequency analysis leverages that in a given language letters occur with different frequencies.</li>
+<li>What do you think is the most common way of hacking someone? Social engineering.</li>
+</ul>
+</aside>
+</div>
+</section>
+<section id="quiz-time-1" class="slide level2">
+<h2><a href="https://create.kahoot.it/share/cryptography-ii/27b08e85-d032-4a2b-a966-d40c1878077d">Quiz Time</a></h2>
+</section></section>
+<section>
+<section id="modern-cryptography" class="title-slide slide level1" data-background="#7BAB8B">
+<h1 data-background="#7BAB8B">Modern Cryptography</h1>
+
+</section>
+<section id="public-key-cryptography" class="slide level2">
+<h2>Public-key Cryptography</h2>
+<p>Modern cryptosystems make heavy use of <a href="https://en.wikipedia.org/wiki/Public-key_cryptography">public key</a> algorithms.</p>
+<p><img src="./assets/public-private-key.svg" alt="public-private-key" width="75%"/></p>
+<aside class="notes">
+<pre><code>Bob wants to send an encrypted message to Alice without Eve being able to decrypt it. Eve can see all the messages Alice and Bob exchange with each other. Alice has a safe only she knows the combination to. The safe can be sent around like any other message.</code></pre>
+<ul>
+<li>What does the “https://” of an url stand for?</li>
+</ul>
+</aside>
+</section>
+<section id="key-exchange" class="slide level2">
+<h2>Key Exchange</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Diffie–Hellman key exchange</a> algorithm allows to securely exchange keys over a public channel.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Diffie-Hellman_Key_Exchange.svg" alt="Diffie-Hellman" width="30%"/></p>
+</section>
+<section id="forward-secrecy-plausible-deniability" class="slide level2">
+<h2>Forward Secrecy &amp; Plausible Deniability</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Signal_Protocol">Signal Protocol</a></li>
+</ul>
+</section>
+<section id="contact-tracing" class="slide level2">
+<h2><a href="https://ncase.me/contact-tracing/">Contact Tracing</a></h2>
+</section></section>
+    </div>
+  </div>
+
+  <script src="./reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: './reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: './reveal.js/plugin/math/math.js', async: true },
+          { src: './reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
