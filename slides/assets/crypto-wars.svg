@@ -7,34 +7,34 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="crypto-wars.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   id="svg8"
-   version="1.1"
-   viewBox="0 0 181.98038 17.064567"
+   width="181.98038mm"
    height="17.064568mm"
-   width="181.98038mm">
+   viewBox="0 0 181.98038 17.064567"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="crypto-wars.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     inkscape:window-maximized="1"
-     inkscape:window-y="32"
-     inkscape:window-x="0"
-     inkscape:window-height="1140"
-     inkscape:window-width="1920"
-     showgrid="false"
-     inkscape:document-rotation="0"
-     inkscape:current-layer="layer1"
-     inkscape:document-units="mm"
-     inkscape:cy="95.945915"
-     inkscape:cx="373.80921"
-     inkscape:zoom="0.98994949"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     borderopacity="1.0"
-     bordercolor="#666666"
+     id="base"
      pagecolor="#ffffff"
-     id="base" />
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="373.80921"
+     inkscape:cy="95.945915"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1140"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -43,25 +43,59 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-23.570818,-75.689555)"
-     id="layer1"
+     inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     inkscape:label="Layer 1">
-    <text
-       id="text835"
-       y="92.469902"
-       x="23.45713"
+     id="layer1"
+     transform="translate(-23.570818,-75.689555)">
+    <g
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.2833px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       xml:space="preserve"><tspan
+       id="text835"
+       aria-label="Crypto Wars">
+      <path
+         id="path832"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.2833px;font-family:'Star Jedi';-inkscape-font-specification:'Star Jedi';stroke-width:0.264583"
-         y="92.469902"
-         x="23.45713"
-         id="tspan833"
-         sodipodi:role="line">Crypto Wars</tspan></text>
+         d="m 28.891416,84.079728 q 0.09095,1.364256 0.591178,2.046384 0.500227,0.682128 1.193724,1.080036 0.693497,0.397908 2.103228,0.579809 1.455206,-0.09095 2.091859,-0.386539 0.636652,-0.295589 1.455206,-0.977717 l 3.228739,3.59254 q -1.409731,1.318781 -2.796725,1.819008 -1.386993,0.500227 -4.024555,0.636653 -2.546611,-0.136426 -3.854022,-0.738972 -1.307412,-0.613915 -2.592087,-1.614369 -1.273305,-1.011823 -2.000908,-2.523874 -0.716235,-1.523419 -0.716235,-3.524327 0,-1.978171 0.716235,-3.490222 0.727603,-1.523419 2.000908,-2.523873 1.284675,-1.011823 2.592087,-1.61437 1.307411,-0.613915 3.854022,-0.75034 2.637562,0.136425 4.024555,0.636652 1.386994,0.500228 2.796725,1.819008 l -3.228739,3.592541 Q 35.508057,81.055628 34.871405,80.760039 34.234752,80.46445 32.779546,80.3735 q -1.409731,0.181901 -2.103228,0.579809 -0.693497,0.397908 -1.193724,1.080036 -0.500227,0.682127 -0.591178,2.046383 z" />
+      <path
+         id="path834"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.2833px;font-family:'Star Jedi';-inkscape-font-specification:'Star Jedi';stroke-width:0.264583"
+         d="M 40.510329,92.469902 V 76.053356 H 51.197 q 1.978171,0.181901 3.251477,1.04593 1.273305,0.864028 1.864483,2.319235 0.454752,2.182809 0.04548,3.365164 -0.409277,1.182355 -1.432469,1.978171 -1.023192,0.795816 -2.93315,1.250568 l 1.227831,1.568894 h 4.911321 v 4.888584 h -6.480216 l -5.20691,-5.422917 v 5.422917 z m 5.934513,-12.323778 v 3.0241 h 4.138243 q 0.329695,0 0.716235,-0.238744 0.386539,-0.250114 0.409276,-1.239199 -0.05684,-0.943611 -0.46612,-1.2392 -0.397908,-0.306957 -0.67076,-0.306957 z" />
+      <path
+         id="path836"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.2833px;font-family:'Star Jedi';-inkscape-font-specification:'Star Jedi';stroke-width:0.264583"
+         d="m 75.662657,76.053356 -7.162344,10.391083 v 6.025463 H 63.13424 V 86.444439 L 55.971897,76.053356 h 6.480215 l 3.342427,5.070485 3.387902,-5.070485 z" />
+      <path
+         id="path838"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.2833px;font-family:'Star Jedi';-inkscape-font-specification:'Star Jedi';stroke-width:0.264583"
+         d="M 74.866843,92.469902 V 76.053356 h 10.686671 q 1.978171,0.181901 3.274214,1.023192 1.296044,0.841291 1.841746,2.341973 0.500227,1.819008 0.409277,2.728512 -0.09095,0.909503 -0.363802,1.705319 -0.272851,0.795816 -1.500681,1.841746 -1.227831,1.045929 -3.274215,1.352887 h -5.138697 v 5.422917 z m 5.934513,-12.323778 v 3.0241 h 4.138243 q 0.329695,0 0.716234,-0.238744 0.38654,-0.250114 0.409277,-1.239199 -0.05684,-0.943611 -0.466121,-1.2392 -0.397907,-0.306957 -0.670759,-0.306957 z" />
+      <path
+         id="path840"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.2833px;font-family:'Star Jedi';-inkscape-font-specification:'Star Jedi';stroke-width:0.264583"
+         d="m 106.89275,76.053356 v 4.888584 h -5.20691 V 92.469902 H 96.342505 V 80.94194 h -5.20691 v -4.888584 z" />
+      <path
+         id="path842"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.2833px;font-family:'Star Jedi';-inkscape-font-specification:'Star Jedi';stroke-width:0.264583"
+         d="m 125.74222,84.35258 q 0,2.694405 -1.12551,4.592994 -1.12552,1.89859 -3.26285,2.853569 -2.12596,0.954979 -5.08185,0.954979 -2.95589,0 -5.08186,-0.954979 -2.11459,-0.966348 -3.206,-2.8422 -1.0914,-1.88722 -1.0914,-4.604363 0,-2.057753 0.62528,-3.615279 0.62529,-1.568894 1.83038,-2.637561 1.20509,-1.068667 2.95589,-1.614369 1.75079,-0.557072 3.96771,-0.557072 2.94452,0 5.08185,0.977717 2.13733,0.966348 3.26285,2.864938 1.12551,1.88722 1.12551,4.581626 z m -13.01728,0.04547 q 0,1.580263 0.70487,2.751249 0.71623,1.170986 2.80809,1.170986 1.61437,0 2.41019,-0.613915 0.80718,-0.613915 1.00045,-1.398362 0.20464,-0.795816 0.27285,-1.909958 -0.0682,-1.580263 -0.76171,-2.75125 -0.69349,-1.182355 -2.92178,-1.182355 -3.51296,0 -3.51296,3.933605 z" />
+      <path
+         id="path844"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.2833px;font-family:'Star Jedi';-inkscape-font-specification:'Star Jedi';stroke-width:0.264583"
+         d="m 148.08191,85.512197 -1.72806,6.957705 h -5.34333 L 137.23608,80.94194 h -3.41064 v -4.888584 h 7.52614 l 2.25102,7.094131 1.95544,-7.094131 h 4.91132 l 2.28513,7.094131 1.52341,-7.094131 h 5.2865 l -4.05866,16.416546 h -5.34334 z" />
+      <path
+         id="path846"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.2833px;font-family:'Star Jedi';-inkscape-font-specification:'Star Jedi';stroke-width:0.264583"
+         d="m 156.19922,92.469902 5.40018,-16.416546 h 8.15143 l 5.49113,16.416546 h -6.20736 l -1.03456,-2.955888 h -4.87722 l -1.03456,2.955888 z m 9.49295,-12.77853 -2.35334,6.502953 h 4.52478 z" />
+      <path
+         id="path848"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.2833px;font-family:'Star Jedi';-inkscape-font-specification:'Star Jedi';stroke-width:0.264583"
+         d="M 175.01459,92.469902 V 76.053356 h 10.68668 q 1.97817,0.181901 3.25147,1.04593 1.27331,0.864028 1.86448,2.319235 0.45476,2.182809 0.0455,3.365164 -0.40928,1.182355 -1.43247,1.978171 -1.02319,0.795816 -2.93315,1.250568 l 1.22783,1.568894 h 4.91132 v 4.888584 h -6.48021 l -5.20691,-5.422917 v 5.422917 z m 5.93452,-12.323778 v 3.0241 h 4.13824 q 0.3297,0 0.71623,-0.238744 0.38654,-0.250114 0.40928,-1.239199 -0.0568,-0.943611 -0.46612,-1.2392 -0.39791,-0.306957 -0.67076,-0.306957 z" />
+      <path
+         id="path850"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.2833px;font-family:'Star Jedi';-inkscape-font-specification:'Star Jedi';stroke-width:0.264583"
+         d="m 205.55119,80.94194 h -4.00181 q -2.92179,-0.09095 -0.86403,1.614369 3.68349,3.228739 3.61527,6.275577 -0.0682,3.046838 -3.61527,3.638016 h -8.73124 v -4.888584 h 3.45611 q 3.21737,0.09095 0.81856,-1.79627 -3.95634,-3.638015 -3.36517,-6.684854 0.59118,-3.046838 3.72897,-3.046838 h 8.95861 z" />
+    </g>
   </g>
 </svg>
