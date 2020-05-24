@@ -35,3 +35,4 @@ A two-hour cryptography workshop adaptable for students between 10-18 years and 
 - [Google CTF Beginner's Quest](https://capturetheflag.withgoogle.com/#beginners/)
 - Enigma Machine on [brilliant.org](https://brilliant.org/wiki/enigma-machine/)
 - [Practical Cryptography](http://www.practicalcryptography.com/)
+- [Cryptools](https://cryptools.github.io)
